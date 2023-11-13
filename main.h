@@ -15,7 +15,7 @@ typedef struct format_spec
 {
 	char *str;
 	int (*func)(va_list ap);
-} spec;
+} spec_t;
 
 /* declaration of _printf function */
 int _printf(const char *format, ...);
