@@ -35,9 +35,13 @@ int print_str(va_list ap)
 	char *str = va_arg(ap, char *);
 	int i;
 
-	/* calling recursivly out _print to output null if str is NULL */
+	/* calling recursivly our _print to output null if str is NULL */
 	if (!str)
-		return (_printf("(null)"));
+	{
+		_printf("(null)");
+		return (6);
+	}
+
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
