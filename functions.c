@@ -17,7 +17,7 @@ int _putchar(char c)
  */
 int print_char(va_list ap)
 {
-	char c = va_arg(ap, int);
+	int c = va_arg(ap, int);
 	return(_putchar(c));
 }
 
