@@ -53,7 +53,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			count += _putchar(format[i]);
-		else /* we jump in here because format is a % */
+
+		/* we jump in here because format is a % */
+		else
 		{
 
 			for (j = 0; ops[j].spec != '\0'; j++)
@@ -66,9 +68,12 @@ int _printf(const char *format, ...)
 					break;
 				}
 
+				/* next char spec == null no match found call print_mod() */
 				else if (ops[j + 1].spec == '\0')
 				{
 					print_mod();
+
+					/* %% skip the second % */
 					if (format[i + 1] == '%')
 						i++;
 				}
