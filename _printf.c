@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			count +=_putchar(format[i]);
+			continue;
 		/* we jump in here because format is a % */
 		else
 		{
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 				/* next char spec == null no match found call print_mod() */
-				if (ops[j + 1].spec == '\0')
+				else if (ops[j + 1].spec == '\0')
 				{
 					print_mod();
 					/* %% skip the second % */
