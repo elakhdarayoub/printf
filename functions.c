@@ -40,8 +40,7 @@ int print_str(va_list ap)
  * print_mod: Prints the modulus char.
  * Return: 1 which the length of printed chars.
  */
-int print_mod(va_list ap)
+int print_mod()
 {
-	(void *)ap;
-	return (_putchar('%'));
+	return (_putchar('%')); /* we are just gonna call it to print '%' */
 }
