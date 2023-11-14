@@ -20,7 +20,9 @@ int _putchar(char c)
 int print_char(va_list ap)
 {
 	int c = va_arg(ap, int);
-	return(_putchar(c));
+
+	(_putchar(c));
+	return (0);
 }
 
 /**
