@@ -20,7 +20,8 @@ int _putchar(char c)
 int print_char(va_list ap)
 {
 	int c = va_arg(ap, int);
-	return(_putchar(c));
+
+	return (_putchar(c));
 }
 
 /**
@@ -36,7 +37,7 @@ int print_str(va_list ap)
 
 	/* calling recursivly out _print to output null if str is NULL */
 	if (!str)
-		return(_printf("(null)"));
+		return (_printf("(null)"));
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
