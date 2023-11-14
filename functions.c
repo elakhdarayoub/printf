@@ -37,10 +37,7 @@ int print_str(va_list ap)
 
 	/* calling recursivly our _print to output null if str is NULL */
 	if (!str)
-	{
-		_printf("(null)");
-		return (-1);
-	}
+		return (_printf("(null)"));
 
 
 	for (i = 0; str[i] != '\0'; i++)
