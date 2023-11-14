@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _printf - A light-weight implementation of standard printf function.
@@ -15,13 +16,13 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
-	if (!format && !format[0])
+	if (format == NULL || strcmp(format, "%") == 0)
 		return (-1);
 	/* The main loop that replaces specifiers with their corrs args */
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-			count += _putchar(format[i]);
+			_putchar(format[i]);
 		/* we jump in here because format is a % */
 		else
 		{
