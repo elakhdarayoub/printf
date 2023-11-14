@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 				/* next char spec == null no match found call print_mod() */
-				else if (ops[j + 1].spec == '\0')
+				if (ops[j + 1].spec == '\0')
 				{
 					print_mod();
 					/* %% skip the second % */
