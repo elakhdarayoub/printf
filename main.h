@@ -30,7 +30,7 @@ int print_char(va_list ap);
 int print_str(va_list ap);
 
 /* prototype of print_mod function */
-int print_mod();
+int print_mod(void);
 
 
 
