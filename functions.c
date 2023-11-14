@@ -5,6 +5,7 @@
  * @c: The char to print.
  * Return: 1.
  */
+
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -12,9 +13,10 @@ int _putchar(char c)
 
 /**
  * print_char - Prints the %c specifier.
- * @ap.
+ * @ap: char to be printed
  * Return: 1.
  */
+
 int print_char(va_list ap)
 {
 	int c = va_arg(ap, int);
@@ -24,24 +26,25 @@ int print_char(va_list ap)
 /**
  * print_str - Prints a string.
  * @ap: The string to print.
- * Return : The number of chars printed.
+ * Return: The number of chars printed.
  */
+
 int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char *);
 	int i;
 
-	for(i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
 	return (i);
 }
 
 /**
- * print_mod: Prints the modulus char.
- * Return: 1 which the length of printed chars.
+ * print_mod - Prints the modulus char.
+ * Return: printed %
  */
-int print_mod(va_list ap)
+
+int print_mod(void)
 {
-	(void *)ap;
-	return (_putchar('%'));
+	return (_putchar('%')); /* we are just gonna call it to print '%' */
 }
