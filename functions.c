@@ -22,6 +22,7 @@ int print_char(va_list ap)
 	int c = va_arg(ap, int);
 
 	return (_putchar(c));
+	return (0);
 }
 
 /**
@@ -51,5 +52,6 @@ int print_str(va_list ap)
 
 int print_mod(void)
 {
-	return (_putchar('%')); /* we are just gonna call it to print '%' */
+	_putchar('%');
+	return (1);
 }
