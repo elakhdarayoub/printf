@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	if (format == NULL || strcmp(format, "%") == 0)
 		return (-1);
 	/* The main loop that replaces specifiers with their corrs args */
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i]; i++)
 	{
 		if (format[i] != '%')
 			count +=_putchar(format[i]);
