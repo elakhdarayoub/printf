@@ -53,6 +53,7 @@ int _printf(const char *format, ...)
 
 				if (!specf)
 				{
+					_putchar('%')
 					print_mod();
 					count++;
 				}
