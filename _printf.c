@@ -1,5 +1,4 @@
 #include "main.h"
-#include "functions.c"
 #include <string.h>
 
 /**
