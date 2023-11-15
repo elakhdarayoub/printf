@@ -5,7 +5,6 @@
  * @c: The char to print.
  * Return: 1.
  */
-
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -16,7 +15,6 @@ int _putchar(char c)
  * @ap: char to be printed
  * Return: 1.
  */
-
 int print_char(va_list ap)
 {
 	int c = va_arg(ap, int);
@@ -29,7 +27,6 @@ int print_char(va_list ap)
  * @ap: The string to print.
  * Return: The number of chars printed.
  */
-
 int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char *);
@@ -53,3 +50,14 @@ int print_mod(void)
 {
 	return (_putchar('%')); /* we are just gonna call it to print '%' */
 }
+
+/**
+ * print_dec - Prints decimal.
+ * @ap: The decimal to print.
+ * Return: length of digits.
+int print_dec(va_list ap)
+{
+	int num = va_arg(ap, int);
+
+}
+*/

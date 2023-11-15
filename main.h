@@ -24,13 +24,16 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 
 /* prototype of print_char function */
-int print_char(va_list ap);
+int print_char(va_list);
 
 /* prototype of print_str function */
-int print_str(va_list ap);
+int print_str(va_list);
 
 /* prototype of print_mod function */
 int print_mod(void);
+
+/* prototype of print_dec */
+int print_dec(va_list);
 
 
 
