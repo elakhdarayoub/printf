@@ -6,6 +6,7 @@
  * @format: Pointer to a constant string.
  * Return: Number of characters been printed.
  */
+
 int _printf(const char *format, ...)
 {
 	map_t ops[] = {
