@@ -9,7 +9,6 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
 /**
  * print_char - Prints the %c specifier.
  * @ap: char to be printed
