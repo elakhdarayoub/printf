@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 				{
 					_putchar('%');
 					print_mod();
-					count++;
+					count += 2;
 				}
 			}
 		}
