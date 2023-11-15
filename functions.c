@@ -33,7 +33,7 @@ int print_char(va_list ap)
 int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char *);
-	int i,j;
+	int i, j;
 
 	/* calling recursivly our _print to output null if str is NULL */
 	if (!str)
