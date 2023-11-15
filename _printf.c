@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 				if (!specf)
 				{
 					print_mod();
-					count ++;
+					count++;
 				}
 			}
 		}
