@@ -72,6 +72,7 @@ int print_binary(va_list ap)
 		_putchar('0');
 		return (0);
 	}
+
 	while (n > 0)
 	{
 		num = n;
@@ -82,3 +83,4 @@ int print_binary(va_list ap)
 			break;
 		binary *= 10;
 	}
+}
