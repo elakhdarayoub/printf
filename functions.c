@@ -43,11 +43,11 @@ int print_str(va_list ap)
 	else
 	{
 		for (i = 0; str[i] != '\0'; i++)
-			{
-				_putchar(str[i]);
-			}
+		{
+			_putchar(str[i]);
+		}
 	}
-
+	
 	return (i);
 }
 
