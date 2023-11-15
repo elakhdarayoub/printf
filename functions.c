@@ -63,7 +63,7 @@ int print_mod(void)
 
 int print_binary(va_list ap)
 {
-	int digits = 0, save_digits = 0;
+	int digits = 0;
 	unsigned long binary = 0, num = 0;
 	unsigned long n = va_arg(ap, int);
 
