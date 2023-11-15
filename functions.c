@@ -42,7 +42,7 @@ int print_str(va_list ap)
 			_putchar(nil_string[y]);
 		return (len2 - 1);
 	}
-	len = string_length(x);
+	len = strlen(x);
 	for (y = 0; y < len ; y++)
 		_putchar(x[y]);
 	return (len - 1);
