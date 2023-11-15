@@ -42,7 +42,6 @@ int print_str(va_list ap)
  * print_mod - Prints the modulus char.
  * Return: printed %
  */
-
 int print_mod(void)
 {
 	return (_putchar('%'));
