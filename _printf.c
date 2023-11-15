@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
-	if (format == NULL && strcmp(format, "%") == 0)
+	if (format == NULL || strcmp(format, "%") == 0)
 		return (-1);
 	/* The main loop that replaces specifiers with their corrs args */
 	for (i = 0; format[i] != '\0'; i++)
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				}
 				/* next char spec == null no match found call print_mod() */
 
-				if (specifier[j + 1].spec_char == '\0')
+				else if (specifier[j + 1].spec_char == '\0')
 				{
 					print_perc();
 					if (format[i + 1] == '%')
