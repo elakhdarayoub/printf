@@ -47,7 +47,7 @@ int print_str(va_list ap)
 			_putchar(str[i]);
 		}
 	}
-	
+
 	return (i);
 }
 
