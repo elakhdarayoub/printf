@@ -63,27 +63,31 @@ int print_mod(void)
 
 int print_binary(va_list ap)
 {
-	unsigned long n = va_arg(ap, unsigned long);
-	unsigned long binary = 0;
+	int digits = 0;
+	unsigned long binary = 0, num = 0;
+	unsigned long n = va_arg(ap, int);
 
 	if (n == 0)
 	{
 		_putchar('0');
-		return (1);
+		return (0);
 	}
-
 	while (n > 0)
 	{
-		binary = binary * 10 + n % 2;
+		num = n;
+		digits++;
+		binary += n % 2;
 		n /= 2;
+		if ((num == 1) && (n == 1))
+			break;
+		binary *= 10;
 	}
-
-	while (binary > 0)
+	binary /= 10;
+	save_digits = digits;
+	for (; digits > 0; digits--)
 	{
 		_putchar((binary % 10) + '0');
 		binary /= 10;
 	}
-
-	return (0);
-
+	return ((save_digits) - 1);
 }
