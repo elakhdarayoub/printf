@@ -13,7 +13,9 @@ int _printf(const char *format, ...)
 
 	int i, j, count = 0;
 	va_list ap;
+	int specf;
 
+	specf = 0;
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
 	if (!format && strcmp(format, "%") == 0)
@@ -27,23 +29,32 @@ int _printf(const char *format, ...)
 		/* we jump in here because format is a % */
 		else
 		{
-			for (j = 0; ops[j].spec != '\0'; j++)
+			if (format[i + 1] == '%')
 			{
-				if (format[i + 1] == ops[j].spec)
-				{
-					count += ops[j].func(ap);
-					i++;
-					break;
-				}
-				/* next char spec == null no match found call print_mod() */
+				print_mod();
+				count++;
+				i++;
+			}
 
-				else if (ops[j + 1].spec == '\0')
+			else
+			{
+				for (j = 0; ops[j].spec != '\0'; j++)
+				{
+					if (format[i + 1] == ops[j].spec)
+					{
+						count += ops[j].func(ap);
+						i++;
+						specf = 1;
+						break;
+					}
+				/* next char spec == null no match found call print_mod() */
+				}
+
+				if (!specf)
 				{
 					print_mod();
-					if (format[i + 1] == '%')
-						i++;
+					count++;
 				}
-
 			}
 		}
 	}
