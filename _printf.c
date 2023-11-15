@@ -24,14 +24,16 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
+		{
 			count += _putchar(format[i]);
+		}
 
 		/* we jump in here because format is a % */
 		else
 		{
 			if (format[i + 1] == '%')
 			{
-				print_mod();
+				_putchar('%');
 				count++;
 				i++;
 			}
@@ -47,7 +49,6 @@ int _printf(const char *format, ...)
 						specf = 1;
 						break;
 					}
-				/* next char spec == null no match found call print_mod() */
 				}
 
 				if (!specf)
