@@ -71,12 +71,13 @@ int print_binary(va_list ap)
 		_putchar('0');
 		return (1);
 	}
-
-    while (n > 0)
-    {
-	    binary = binary * 10 + n % 2;
-	    n /= 2;
-    }
+	
+	while (n > 0)
+	{
+		binary = binary * 10 + n % 2;
+		n /= 2;
+	}
+	
 	while (binary > 0)
 	{
 		_putchar((binary % 10) + '0');
