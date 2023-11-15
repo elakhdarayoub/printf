@@ -1,4 +1,6 @@
 #include "main.h"
+#include <string.h>
+
 /**
  * _printf - A light-weight implementation of standard printf function.
  * @format: Pointer to a constant string.
@@ -34,13 +36,13 @@ int _printf(const char *format, ...)
 					break;
 				}
 				/* next char spec == null no match found call print_mod() */
-				else if (ops[j + 1].spec == '\0')
+
+				else if (specifier[i2 + 1].spec_char == '\0' && format[i + 1] == '%')
 				{
-					print_mod();
-					/* %% skip the second % */
-					if (format[i + 1] == '%')
-						i++;
+					print_perc();
+					i++;
 				}
+
 			}
 		}
 	}
