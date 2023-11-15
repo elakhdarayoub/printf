@@ -28,25 +28,24 @@ int _printf(const char *format, ...)
 		/* we jump in here because format is a % */
 		else
 		{
-			if (format == '%')
-				for (j = 0; ops[j].spec != '\0'; j++)
+			for (j = 0; ops[j].spec != '\0'; j++)
+			{
+				if (format[i + 1] == ops[j].spec)
 				{
-					if (format[i + 1] == ops[j].spec)
-					{
-						count += ops[j].func(ap);
-						i++;
-						break;
-					}
-					/* next char spec == null no match found call print_mod() */
-	
-					else if (ops[j + 1].spec == '\0')
-					{
-						if (format[i + 1] == '%')
-							print_mod();
-						i++;
-					}
-	
+					count += ops[j].func(ap);
+					i++;
+					break;
 				}
+				/* next char spec == null no match found call print_mod() */
+
+				else if (ops[j + 1].spec == '\0')
+				{
+					if (format[i + 1] == '%')
+						print_mod();
+					i++;
+				}
+
+			}
 		}
 	}
 	va_end(ap);
