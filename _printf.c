@@ -23,7 +23,8 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '%')
 			{
 				_putchar('%');
-				count++, i++;
+				count++;
+				i++;
 			}
 			else
 			{
@@ -31,7 +32,9 @@ int _printf(const char *format, ...)
 				{
 					if (format[i + 1] == ops[j].spec)
 					{
-						count += ops[j].func(ap), i++, specf = 1;
+						count += ops[j].func(ap);
+						i++;
+						specf = 1;
 						break;
 					}
 				}
@@ -39,7 +42,8 @@ int _printf(const char *format, ...)
 				{
 					_putchar('%');
 					_putchar(format[i + 1]);
-					count += 2, i++;
+					count += 2;
+					i++;
 				}
 			}
 		}
