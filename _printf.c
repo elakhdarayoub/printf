@@ -33,7 +33,6 @@ int _printf(const char *format, ...)
 				{
 					count += ops[j].func(ap);
 					i++;
-					break;
 				}
 				/* next char spec == null no match found call print_mod() */
 
