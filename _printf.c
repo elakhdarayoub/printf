@@ -16,7 +16,8 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
-	if (!format || strcmp(format, "%") == 0 || strlen(format) == 0))
+	if (!format || strcmp(format, "%") == 0
+		|| strlen(format) == 0))
 		return (-1);
 	/* The main loop that replaces specifiers with their corrs args */
 	for (i = 0; format[i] != '\0'; i++)
