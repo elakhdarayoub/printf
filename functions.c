@@ -69,7 +69,7 @@ int print_binary(va_list ap)
     if (n == 0)
     {
         _putchar('0');
-        return 1; // Return the count of characters printed
+        return 1;
     }
 
     while (n > 0)
@@ -78,10 +78,9 @@ int print_binary(va_list ap)
         n /= 2;
     }
 
-    // Now, print the binary representation
     while (binary > 0)
     {
-        _putchar((binary % 10) + '0'); // Print the last digit
+        _putchar((binary % 10) + '0');
         binary /= 10;
     }
 
