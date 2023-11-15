@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * _putchar - Prints a char.
@@ -33,19 +32,14 @@ int print_char(va_list ap)
 
 int print_str(va_list ap)
 {
-	char *x = va_arg(ap, char*), *nil_string = "(null)";
-	int y, len, len2 = strlen(nil_string);
+	char *str = va_arg(ap, char *);
+	int i, j;
 
-	if (x == NULL)
-	{
-		for (y = 0; nil_string[y]; y++)
-			_putchar(nil_string[y]);
-		return (len2 - 1);
-	}
-	len = strlen(x);
-	for (y = 0; y < len ; y++)
-		_putchar(x[y]);
-	return (len - 1);
+	
+	/* calling recursivly our _print to output null if str is NULL */
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+	return (i);
 }
 
 /**
