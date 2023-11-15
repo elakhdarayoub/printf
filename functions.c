@@ -33,14 +33,9 @@ int print_char(va_list ap)
 int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char *);
-	int i, j;
+	int i;
 
 	/* calling recursivly our _print to output null if str is NULL */
-	if (!str)
-		for (j = 0; "(null)"[j] != '\0'; j++)
-			_putchar("(null)"[j]);
-	return (j);
-
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
 	return (i);
