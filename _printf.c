@@ -37,11 +37,12 @@ int _printf(const char *format, ...)
 				}
 				/* next char spec == null no match found call print_mod() */
 
-				else if (specifier[i2 + 1].spec_char == '\0' && format[i + 1] == '%')
+				if (specifier[i2 + 1].spec_char == '\0')
 				{
 					print_perc();
-					i++;
-				}
+					if (format[i + 1] == '%')
+						i++;
+				} 
 
 			}
 		}
