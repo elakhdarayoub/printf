@@ -9,14 +9,14 @@
 int _printf(const char *format, ...)
 {
 	map_t ops[] = {
-	{'c', print_char}, {'s', print_str}, {'\0', NULL}};
+		{'c', print_char}, {'s', print_str}, {'\0', NULL}};
 
 	int i, j, count = 0;
 	va_list ap;
 
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
-	if (!format && strcmp(format, "%") == 0)
+	if (!format || strcmp(format, "%") == 0)
 		return (-1);
 	/* The main loop that replaces specifiers with their corrs args */
 	for (i = 0; format[i] != '\0'; i++)
