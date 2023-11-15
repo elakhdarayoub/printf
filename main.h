@@ -35,6 +35,4 @@ int print_mod(void);
 /* prototype of print_dec */
 int print_dec(va_list);
 
-
-
 #endif /* MAIN_H */
