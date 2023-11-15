@@ -33,13 +33,14 @@ int _printf(const char *format, ...)
 				{
 					count += ops[j].func(ap);
 					i++;
+					break;
 				}
 				/* next char spec == null no match found call print_mod() */
 
 				else if (ops[j + 1].spec == '\0')
 				{
-					print_mod();
 					if (format[i + 1] == '%')
+						print_mod();
 						i++;
 				}
 
