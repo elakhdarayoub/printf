@@ -84,5 +84,5 @@ int print_binary(va_list ap)
         binary /= 10;
     }
 
-    return 0; // Return the count of characters printed
+    return 0;
 }
