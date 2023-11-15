@@ -65,11 +65,11 @@ int print_binary(va_list ap)
 {
 	unsigned long n = va_arg(ap, unsigned long);
 	unsigned long binary = 0;
-	
+
 	if (n == 0)
 	{
 		_putchar('0');
-		return 1;
+		return (1);
 	}
 
     while (n > 0)
@@ -82,7 +82,7 @@ int print_binary(va_list ap)
 		_putchar((binary % 10) + '0');
 		binary /= 10;
 	}
-	
-	return 0;
+
+	return (0);
 
 }
