@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 
 				else if (specifier[j + 1].spec == '\0')
 				{
-					print_perc();
+					print_mod();
 					if (format[i + 1] == '%')
 						i++;
 				}
