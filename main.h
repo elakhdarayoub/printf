@@ -32,6 +32,7 @@ int print_str(va_list ap);
 /* prototype of print_mod function */
 int print_mod(void);
 
-
+/* prototype of print_binary function */
+int print_binary(va_list ap);
 
 #endif /* MAIN_H */
