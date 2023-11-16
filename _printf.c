@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			count += _putchar(format[i]);
+		/* we jump in here because format is a % */
 		else
 		{
 			if (format[i + 1] == '%')
