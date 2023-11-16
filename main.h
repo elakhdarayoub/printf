@@ -4,7 +4,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
 
 /**
  * struct format_spec - Maps format specifier with function pointer
@@ -25,15 +24,12 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 
 /* prototype of print_char function */
-int print_char(va_list);
+int print_char(va_list ap);
 
 /* prototype of print_str function */
-int print_str(va_list);
+int print_str(va_list ap);
 
 /* prototype of print_mod function */
 int print_mod(void);
-
-/* prototype of print_dec */
-int print_dec(va_list);
 
 #endif /* MAIN_H */
