@@ -4,13 +4,13 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 /**
  * struct format_spec - Maps format specifier with function pointer
  * @spec: specifying character
  * @func: function pointer that matches specifier
  */
-
 typedef struct format_spec
 {
 	char spec;
