@@ -22,8 +22,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '%')
 			{
-				_putchar('%');
-				count++;
+				count += _putchar('%');
 				i++;
 			}
 			else
@@ -34,15 +33,23 @@ int _printf(const char *format, ...)
 					{
 						count += ops[j].func(ap);
 						i++;
-						specf = 1;
 						break;
+					}
+					else if (ops[j + 1].spec == '\0')
+					{
+						count += print_mod();
+						if (format[i + 1] == '%')
+						{
+							i++;
+							specf = 1;
+							break;
+						}
 					}
 				}
 				if (!specf)
 				{
-					_putchar('%');
-					_putchar(format[i + 1]);
-					count += 2;
+					count += _putchar('%');
+					count += _putchar(format[i + 1]);
 					i++;
 				}
 			}

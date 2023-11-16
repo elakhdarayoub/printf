@@ -9,6 +9,7 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
 /**
  * print_char - Prints the %c specifier.
  * @ap: char to be printed
@@ -16,9 +17,7 @@ int _putchar(char c)
  */
 int print_char(va_list ap)
 {
-	int c = va_arg(ap, int);
-
-	return (_putchar(c));
+	return (_putchar(va_arg(ap, int)));
 }
 
 /**
@@ -32,8 +31,15 @@ int print_str(va_list ap)
 	int i;
 
 	/* calling recursivly our _print to output null if str is NULL */
-	for (i = 0; str[i] != '\0'; i++)
-		_putchar(str[i]);
+	if (str == NULL)
+	{
+		return (_printf("(null)"));
+	}
+	else
+	{
+		for (i = 0; str[i] != '\0'; i++)
+				_putchar(str[i]);
+	}
 	return (i);
 }
 
@@ -50,9 +56,10 @@ int print_mod(void)
  * print_dec - Prints decimal.
  * @ap: The decimal to print.
  * Return: length of digits.
- */
+
 int print_dec(va_list ap)
 {
 	int i;
 	int num = va_arg(ap, int);
 }
+*/
