@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int i, j, count = 0, spec = 0;
 	va_list ap;
 	int specf;
-	
+
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
 	if (!format || strcmp(format, "%") == 0)
