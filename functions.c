@@ -1,32 +1,27 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * _putchar - Prints a char.
  * @c: The char to print.
  * Return: 1.
  */
+
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
 /**
- * print_char - Prints the %c specifier.
- * @ap: char to be printed
- * Return: 1.
+ * print_char - Print a character
+ * @ap: The va_list containing the character to print
+ * Return: Number of characters printed
  */
 int print_char(va_list ap)
 {
-	int c = va_arg(ap, int);
-
-	return (_putchar(c));
+    int c = va_arg(ap, int);
+    return _putchar(c);
 }
-
-/**
- * print_str - Prints a string.
- * @ap: The string to print.
- * Return: The number of chars printed.
- */
 
 int print_str(va_list ap)
 {
@@ -40,12 +35,13 @@ int print_str(va_list ap)
 }
 
 /**
- * print_mod - Prints the modulus char.
- * @ap: args
- * Return: printed %
+ * print_mod - Print a percent sign
+ * @ap: The va_list (not used)
+ * Return: Always 1 (number of characters printed)
  */
-
-int print_mod(void)
+int print_mod(va_list ap)
 {
-	return (_putchar('%'));
+    (void)ap;
+    return _putchar('%');
 }
+
