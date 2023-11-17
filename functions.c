@@ -43,6 +43,7 @@ int print_str(va_list ap)
 
 /**
  * print_mod - Prints the modulus char.
+ * @ap: args
  * Return: printed %
  */
 
