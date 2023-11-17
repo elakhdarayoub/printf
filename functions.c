@@ -48,6 +48,6 @@ int print_str(va_list ap)
 
 int print_mod(va_list ap)
 {
-	int ch = va_arg(ap, int)
-	return (_putchar('ch'));
+	(void)ap;
+	return (_putchar('%'));
 }
