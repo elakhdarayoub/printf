@@ -9,9 +9,11 @@ int _printf(const char *format, ...)
 {
 	map_t ops[] = {
 		{'c', print_char}, {'s', print_str}, {'\0', NULL}};
-	int i, j, count = 0, specf = 0;
-	va_list ap;
 
+	int i, j, count = 0, spec = 0;
+	va_list ap;
+	int specf;
+	
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
 	if (!format || strcmp(format, "%") == 0)
@@ -49,10 +51,10 @@ int _printf(const char *format, ...)
 
 				if (!specf)
 				{
+					// Adjusted to print '%' before calling print_mod
 					_putchar('%');
-					_putchar(format[i + 1]);
-					count += 2;
-					i++;
+					print_mod();
+					count += 2; // Increment count by 2 for '%' and printed character
 				}
 			}
 		}
