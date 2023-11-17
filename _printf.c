@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 					{
 						count += ops[j].func(ap);
 						specf = 1;
+						i++
 						break;
 					}
 				}
