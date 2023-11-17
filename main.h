@@ -32,4 +32,6 @@ int print_str(va_list ap);
 /* prototype of print_mod function */
 int print_mod(void);
 
+int string_length(char *s);
+int print_int(va_list ap);
 #endif /* MAIN_H */
