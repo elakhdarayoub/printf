@@ -53,7 +53,6 @@ int _printf(const char *format, ...)
 					_putchar(format[i +1]);
 					count += 2;
 					i++;
-					break;
 				}
 			}
 		}
