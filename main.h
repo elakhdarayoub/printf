@@ -1,36 +1,32 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
+#include <stdio.h>
+#include <stddef.h>
 
 /**
- * struct format_spec - Maps format specifier with function pointer
- * @spec: Specifying character
- * @func: Function pointer that matches specifier
+ * struct printf_function - Struct containing a specifier and its function
+ * @spec: The specifier character
+ * @func: The corresponding function pointer
  */
-typedef struct format_spec
+typedef struct printf_function
 {
-	char spec;
-	int (*func)(va_list ap);
-} map_t;
+    char spec;
+    int (*func)(va_list);
+} printf_function;
 
-/* prototype of _printf function */
 int _printf(const char *format, ...);
-
-/* prototype of _putchar function */
 int _putchar(char c);
 
-/* prototype of print_char function */
-int print_char(va_list ap);
+int print_char(va_list args);
+int print_str(va_list args);
+int print_mod(va_list args);
 
-/* prototype of print_str function */
-int print_str(va_list ap);
+int handle_flags(char flag, va_list args);
+int handle_length_modifier(char modifier, va_list args);
+int get_number(const char *format, int *i);
 
-/* prototype of print_mod function */
-int print_mod(void);
+printf_function get_specifier_function(char spec);
 
 #endif /* MAIN_H */
