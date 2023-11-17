@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,7 +9,7 @@
 
 /**
  * struct format_spec - Maps format specifier with function pointer
- * @spec: specifying character
+ * @spec: Specifying character
  * @func: function pointer that matches specifier
  */
 typedef struct format_spec
