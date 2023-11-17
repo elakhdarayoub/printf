@@ -30,8 +30,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '%')
 			{
-				_putchar('%');
-				count++;
+				count += putchar('%');
 				i++;
 			}
 
@@ -51,7 +50,8 @@ int _printf(const char *format, ...)
 				if (!specf)
 				{
 					_putchar('%');
-					count++;
+					print_mod();
+					count += 2;
 				}
 			}
 		}
