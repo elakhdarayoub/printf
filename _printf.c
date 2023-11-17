@@ -30,7 +30,8 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '%')
 			{
-				count += putchar('%');
+				putchar('%');
+				count++;
 				i++;
 			}
 
