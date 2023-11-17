@@ -1,7 +1,4 @@
-User
-User
 #include "main.h"
-#include <string.h>
 
 /**
  * _printf - A light-weight implementation of standard printf function.
