@@ -9,10 +9,10 @@ int _printf(const char *format, ...)
 {
     map_t ops[] = {
         {'c', print_char}, {'s', print_str}, {'%', print_mod}, {'\0', NULL}};
-
+    
     int i, j, count = 0, specf = 0;
     va_list ap;
-
+    
     va_start(ap, format);
 
     if (!format || strcmp(format, "%") == 0)
