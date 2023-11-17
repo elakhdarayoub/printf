@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	map_t ops[] = {
-		{'c', print_char}, {'s', print_str}, {'\0', NULL}};
+		{'c', print_char}, {'s', print_str},{'\0', NULL}};
 
 	int i, j, count = 0;
 	va_list ap;
