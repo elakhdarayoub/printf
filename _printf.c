@@ -10,9 +10,8 @@ int _printf(const char *format, ...)
 	map_t ops[] = {
 		{'c', print_char}, {'s', print_str}, {'\0', NULL}};
 
-	int i, j, count = 0, spec = 0;
+	int i, j, count = 0, specf = 0;
 	va_list ap;
-	int specf;
 
 	va_start(ap, format);
 	/* If The format passed is NULL in any form just exit with -1 */
@@ -54,7 +53,6 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					print_mod();
 					count += 2;
-					i++;
 				}
 			}
 		}
