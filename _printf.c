@@ -51,10 +51,11 @@ int _printf(const char *format, ...)
 
 				if (!specf)
 				{
-					// Adjusted to print '%' before calling print_mod
+
 					_putchar('%');
 					print_mod();
-					count += 2; // Increment count by 2 for '%' and printed character
+					count += 2;
+					i++;
 				}
 			}
 		}
