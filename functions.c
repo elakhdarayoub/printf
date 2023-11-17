@@ -47,7 +47,7 @@ int print_str(va_list ap)
  * Return: printed %
  */
 
-int print_mod()
+void print_mod()
 {
 	return (_putchar('%'));
 }
