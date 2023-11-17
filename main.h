@@ -10,7 +10,7 @@
 /**
  * struct format_spec - Maps format specifier with function pointer
  * @spec: Specifying character
- * @func: function pointer that matches specifier
+ * @func: Function pointer that matches specifier
  */
 typedef struct format_spec
 {
