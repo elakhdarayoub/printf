@@ -15,7 +15,6 @@ int _putchar(char c)
  * @ap: char to be printed
  * Return: 1.
  */
-
 int print_char(va_list ap)
 {
 	int c = va_arg(ap, int);
