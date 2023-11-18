@@ -32,7 +32,7 @@ int print_str(va_list ap)
 char *str = va_arg(ap, char *);
 int i;
 if (str == NULL)
-_printf("(null)");
+return (_printf("(null)"));
 
 /* calling recursivly our _print to output null if str is NULL */
 for (i = 0; str[i] != '\0'; i++)
