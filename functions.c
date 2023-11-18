@@ -49,13 +49,3 @@ int print_mod(void)
 {
 return (_putchar('%'));
 }
-
-/**
-* print_dec - Prints decimal.
-* @ap: The decimal to print.
-* Return: length of digits.
-*int print_dec(va_list ap)
-*{
-*int num = va_arg(ap, int);
-*}
-*/
