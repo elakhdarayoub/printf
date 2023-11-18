@@ -9,6 +9,7 @@
 
 int _printf(const char *format, ...)
 {
+
 map_t ops[] = {
 {'c', print_char}, {'s', print_str}, {'\0', NULL}};
 
