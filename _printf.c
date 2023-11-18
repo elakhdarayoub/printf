@@ -61,13 +61,3 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-/* 1 */
-/* 2 */
-/* 3 */
-/* 4 */
-/* 5 */
-/* 6 */
-/* 7 */
-/* 8 */
-/* 9 */
-/* 10 */
