@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _printf - function to print
- * @format: string to be passed
- * Return: 0
+ * _printf - A light-weight implementation of standard printf function.
+ * @format: pointer to a string
+ * Return: number of char printed
  */
 
 int _printf(const char *format, ...)

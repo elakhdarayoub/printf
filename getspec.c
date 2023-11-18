@@ -10,7 +10,11 @@ printf_function get_specifier_function(char spec)
 {
 	int i;
 	printf_function ops[] = {
-		{'c', print_char}, {'s', print_str}, {'%', print_mod},
+		{'c', print_char},
+		{'s', print_str},
+		{'%', print_mod},
+		{'i', print_int},
+		{'d', print_int},
 		{'\0', NULL}};
 
 	printf_function null_function = {'\0', NULL};
