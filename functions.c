@@ -42,10 +42,11 @@ return (i);
 
 /**
 * print_mod - Prints the modulus char.
+* @ap: char to print
 * Return: printed %
 */
 
-int print_mod(void)
+int print_mod(__attribute__((unused)) va_list ap)
 {
 return (_putchar('%'));
 }
