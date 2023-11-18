@@ -8,26 +8,13 @@
 
 int _printf(const char *format, ...)
 {
-
-	map_t ops[] = {
-		{'c', print_char}, {'s', print_str}, {'d', print_int}, {'i', print_int}, {'\0', NULL}};
-
-	int i, j, count = 0;
-
 	int count, i;
-
 	va_list ap;
 
 	count = 0;
 	va_start(ap, format);
 
-
 	if (!format)
-
-	/* If The format passed is NULL in any form just exit with -1 */
-	/* This */
-	if (!format && strcmp(format, "%") == 0)
-
 		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -66,4 +53,4 @@ int _printf(const char *format, ...)
 
 	va_end(ap);
 	return (count);
-
+}
