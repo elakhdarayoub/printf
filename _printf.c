@@ -1,62 +1,63 @@
 #include "main.h"
 
 /**
- * _printf - A light-weight implementation of standard printf function.
- * @format: Pointer to a constant string.
- * Return: Number of characters been printed.
+ * _printf - function to print
+ * @format: string to be passed
+ * Return: 0
  */
+
 int _printf(const char *format, ...)
 {
+
 	map_t ops[] = {
 		{'c', print_char}, {'s', print_str}, {'d', print_int}, {'i', print_int}, {'\0', NULL}};
 
 	int i, j, count = 0;
-	va_list ap;
-	int specf;
 
-	specf = 0;
+	int count, i;
+
+	va_list ap;
+
+	count = 0;
 	va_start(ap, format);
-	/* If The format passed is NULL in any form just exit with -1 */
-	if (!format && strcmp(format, "%") == 0)
+
+	if (!format)
 		return (-1);
-	/* The main loop that replaces specifiers with their corrs args */
+
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
+		{
 			count += _putchar(format[i]);
+		}
 
-		/* we jump in here because format is a % */
 		else
 		{
 			if (format[i + 1] == '%')
 			{
-				print_mod();
-				count++;
+				count += _putchar('%');
 				i++;
 			}
 
 			else
 			{
-				for (j = 0; ops[j].spec != '\0'; j++)
+				printf_function func = get_specifier_function(format[i + 1]);
+
+				if (func.spec != '\0')
 				{
-					if (format[i + 1] == ops[j].spec)
-					{
-						count += ops[j].func(ap);
-						i++;
-						specf = 1;
-						break;
-					}
-				/* next char spec == null no match found call print_mod() */
+					count += func.func(ap);
+					i++;
 				}
 
-				if (!specf)
+				else
 				{
-					print_mod();
-					count++;
+					count += _putchar('%') + _putchar(format[i + 1]);
+					i++;
 				}
 			}
 		}
 	}
+
 	va_end(ap);
 	return (count);
 
