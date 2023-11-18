@@ -43,7 +43,6 @@ int print_str(va_list ap)
  * @ap: args
  * Return: printed %
  */
-
 int print_mod(void)
 {
 	return (_putchar('%'));
