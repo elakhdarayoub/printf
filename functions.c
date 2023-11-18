@@ -27,7 +27,6 @@ int print_char(va_list ap)
  * @ap: The string to print.
  * Return: The number of chars printed.
  */
-
 int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char *);
