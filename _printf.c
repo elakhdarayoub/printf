@@ -37,6 +37,7 @@ if (format[i + 1] == '%')
 _putchar('%');
 count++;
 i++;
+continue;
 }
 
 else
