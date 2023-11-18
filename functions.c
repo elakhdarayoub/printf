@@ -47,7 +47,9 @@ int print_str(va_list ap)
  * Return: Always 1 (number of characters printed)
  */
 
-int print_mod(void)
+int print_mod(va_list ap)
 {
+	(void)ap;
+
 	return (_putchar('%'));
 }
