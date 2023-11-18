@@ -1,60 +1,38 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
+
+#include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
-* _putchar - Prints a char.
-* @c: The char to print.
-* Return: 1.
-*/
-int _putchar(char c)
-{
-return (write(1, &c, 1));
-}
-
-/**
-* print_char - Prints the %c specifier.
-* @ap: char to be printed
-* Return: 1.
-*/
-int print_char(va_list ap)
-{
-int c = va_arg(ap, int);
-
-return (_putchar(c));
-}
-
-/**
-* print_str - Prints a string.
-* @ap: The string to print.
-* Return: The number of chars printed.
-*/
-int print_str(va_list ap)
-{
-char *str = va_arg(ap, char *);
-int i;
-
-/* calling recursivly our _print to output null if str is NULL */
-for (i = 0; str[i] != '\0'; i++)
-_putchar(str[i]);
-return (i);
-}
-
-/**
-* print_mod - Prints the modulus char.
-* Return: printed %
+* struct format_spec - Maps format specifier with function pointer
+* @spec: specifying character
+* @func: function pointer that matches specifier
 */
 
-int print_mod(void)
+typedef struct format_spec
 {
-return (_putchar('%'));
-}
+char spec;
+int (*func)(va_list ap);
+} map_t;
 
-/**
-* print_dec - Prints decimal.
-* @ap: The decimal to print.
-* Return: length of digits.
-int print_dec(va_list ap)
-{
-int num = va_arg(ap, int);
+/* prototype of _printf function */
+int _printf(const char *format, ...);
 
-}
-*/
+/* prototype of _putchar function */
+int _putchar(char c);
+
+/* prototype of print_char function */
+int print_char(va_list);
+
+/* prototype of print_str function */
+int print_str(va_list);
+
+/* prototype of print_mod function */
+int print_mod(void);
+
+/* prototype of print_dec */
+int print_dec(va_list);
+
+#endif /* MAIN_H */
