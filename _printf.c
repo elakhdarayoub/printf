@@ -21,7 +21,13 @@ int _printf(const char *format, ...)
 	count = 0;
 	va_start(ap, format);
 
+
 	if (!format)
+
+	/* If The format passed is NULL in any form just exit with -1 */
+	/* This */
+	if (!format && strcmp(format, "%") == 0)
+
 		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
