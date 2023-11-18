@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stddef.h>
+#include <string.h>
 
 /**
  * struct printf_function - Struct containing a specifier and its function
