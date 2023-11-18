@@ -1,32 +1,60 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <stdarg.h>
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
+#include "main.h"
 
 /**
- * struct printf_function - Struct containing a specifier and its function
- * @spec: The specifier character
- * @func: The corresponding function pointer
- */
-typedef struct printf_function
+* _putchar - Prints a char.
+* @c: The char to print.
+* Return: 1.
+*/
+int _putchar(char c)
 {
-	char spec;
-	int (*func)(va_list);
-} printf_function;
+return (write(1, &c, 1));
+}
 
-int _printf(const char *format, ...);
-int _putchar(char c);
+/**
+* print_char - Prints the %c specifier.
+* @ap: char to be printed
+* Return: 1.
+*/
+int print_char(va_list ap)
+{
+int c = va_arg(ap, int);
 
-int print_char(va_list args);
-int print_str(va_list args);
-int print_mod(va_list args);
-int print_int(va_list ap);
+return (_putchar(c));
+}
 
-printf_function get_specifier_function(char spec);
+/**
+* print_str - Prints a string.
+* @ap: The string to print.
+* Return: The number of chars printed.
+*/
+int print_str(va_list ap)
+{
+char *str = va_arg(ap, char *);
+int i;
 
-int string_length(char *s);
-int print_int(va_list ap);
-#endif /* MAIN_H */
+/* calling recursivly our _print to output null if str is NULL */
+for (i = 0; str[i] != '\0'; i++)
+_putchar(str[i]);
+return (i);
+}
+
+/**
+* print_mod - Prints the modulus char.
+* Return: printed %
+*/
+
+int print_mod(void)
+{
+return (_putchar('%'));
+}
+
+/**
+* print_dec - Prints decimal.
+* @ap: The decimal to print.
+* Return: length of digits.
+int print_dec(va_list ap)
+{
+int num = va_arg(ap, int);
+
+}
+*/
