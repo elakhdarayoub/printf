@@ -23,10 +23,7 @@ int _putchar(char c);
 int print_char(va_list args);
 int print_str(va_list args);
 int print_mod(va_list args);
-
-int handle_flags(char flag, va_list args);
-int handle_length_modifier(char modifier, va_list args);
-int get_number(const char *format, int *i);
+int print_int(va_list ap);
 
 printf_function get_specifier_function(char spec);
 
