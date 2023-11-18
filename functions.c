@@ -19,14 +19,22 @@ int _putchar(char c)
  */
 int print_char(va_list ap)
 {
-    int c = va_arg(ap, int);
-    return _putchar(c);
+	int c = va_arg(ap, int);
+
+	return (_putchar(c));
 }
+
+/**
+ * print_str - Print a character
+ * @ap: The va_list containing the character to print
+ * Return: string
+ */
 
 int print_str(va_list ap)
 {
-	char *str = va_arg(ap, char *);
 	int i;
+
+	char *str = va_arg(ap, char *);
 
 	/* calling recursivly our _print to output null if str is NULL */
 	for (i = 0; str[i] != '\0'; i++)
@@ -39,9 +47,10 @@ int print_str(va_list ap)
  * @ap: The va_list (not used)
  * Return: Always 1 (number of characters printed)
  */
+
 int print_mod(va_list ap)
 {
-    (void)ap;
-    return _putchar('%');
-}
+	(void)ap;
 
+	return (_putchar('%'));
+}

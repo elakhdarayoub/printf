@@ -12,8 +12,8 @@
  */
 typedef struct printf_function
 {
-    char spec;
-    int (*func)(va_list);
+	char spec;
+	int (*func)(va_list);
 } printf_function;
 
 int _printf(const char *format, ...);
