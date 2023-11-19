@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0;
 	va_list ap;
+
 	va_start(ap, format);
 	if (!format || strcmp(format, "%") == 0)
 		return (-1);
@@ -30,18 +31,10 @@ int _printf(const char *format, ...)
 			else
 			{
 				map_t spec = get_specifier_function(format[i + 1]);
-				if (spec.func != NULL)
-				{
-					count += spec.func(ap);
-					i++;
-				}
-				else
-				{
-					_putchar('%');
-					_putchar(format[i + 1]);
-					count += 2;
-					i++;
-				}
+
+				count += (spec.func != NULL)
+					? spec.func(ap)
+					: (_putchar('%') + _putchar(format[i + 1]) + (++i, 0));
 			}
 		}
 	}
