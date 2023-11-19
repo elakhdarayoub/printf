@@ -5,10 +5,12 @@
 * @format: Pointer to a constant string.
 * Return: Number of characters been printed.
 */
+
 int _printf(const char *format, ...)
 {
 	int i, count = 0;
 	va_list ap;
+
 	va_start(ap, format);
 	if (!format || strcmp(format, "%") == 0)
 		return (-1);
@@ -30,6 +32,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				map_t spec = get_specifier_function(format[i + 1]);
+
 				if (spec.func != NULL)
 				{
 					count += spec.func(ap);
@@ -47,3 +50,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(ap);
 	return (count);
+}
